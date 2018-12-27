@@ -1,0 +1,41 @@
+<!--index.wxml-->
+<!--主视图-->
+<view class='weather-wrapper'>
+  <!--位置视图style='background-color:{{nowCityColor}}'-->
+  <view class="location-wrapper" bindtap='onTapLocation'>
+    <view class='location'>
+      <image class='location-icon' src='/images/location-icon.png'></image>
+      <view class='location-text' >{{city}}</view> 
+    </view>
+     <view class='location-tips' >{{locationTipsText}}</view>
+  </view>
+   <!--非位置视图-->
+  <view class='temp'>{{nowTemp}}</view>
+  <view class='weather'>{{nowWeather}}</view>
+  <image class='weather-bg' src='{{nowWeatherBackground}}' mode='scaleToFill'></image>
+   <!--气温差视图-->
+  <view class="day-weather" bindtap='onTapDayWeather'>
+    <view class="day-text">{{todayDate}}</view>
+    <view class="temp-text">{{todayTemp}}</view>
+  <image class="arrow-icon" src="/images/arrow.png"></image>
+  </view>
+</view>
+ <!--中间视图-->
+<view class="timetips">
+  <image class="timetips-icon" src="/images/time-icon.png"></image>
+  <view class="timetips-text">今後24時間の気温変化</view>
+ </view>
+ <!--滑动视图-->
+<scroll-view scroll-x> 
+  <view class="forecast-list">
+    <view class="forecast-item"wx:for="{{hourlyWeather}}"wx:key="1">
+      <view class= 'forecast-time'>{{item.time}}</view>
+      <image class= 'forecast-weather' src='{{item.iconPath}}'></image>
+      <view class= 'forecast-temp'>{{item.temp}}</view>
+    </view>
+  </view>
+</scroll-view>
+ <!--底部视图-->
+<view class='bottomTips'>
+  <view class='bottomTips-text'>開くにはGPSとWeChatの位置情報を確認してください</view>
+</view>
