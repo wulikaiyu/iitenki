@@ -9,11 +9,12 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "天気をつけて",
     "navigationBarTextStyle": "black",
-    "enablePullDownRefresh": true
+    "enablePullDownRefresh": true,
+    "navigationStyle": "custom"
   },
   "permission":{
     "scope.userLocation":{
-    "desc" : "您的位置信息将用于获取天气数据"
+    "desc" : "貴方の場所は天気データを取得するために使用されます"
     }
   }
 }

@@ -1,34 +1,52 @@
 /* pages/list/list.wxss */
+.top{
+  margin: 0 40rpx;
+  height: 185rpx;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  align-items: center;
+  display: flex;
+}
+.topTips-text{
+  opacity: 0.8;
+  font-size: 40rpx;
+  line-height: 56rpx;
+}
 .date-item {
-   display: flex;
-   align-items: center;
-   height: 150rpx;
-   margin: 0 40rpx;
-   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
- }
- 
-  .day{
-   opacity: 0.8;
-   font-size: 40rpx;
-   line-height: 56rpx;
- }
- 
-  .date{
-   opacity: 0.5;
-   font-size: 25rpx;
-   line-height: 35rpx;
- }
- 
-  .temp{
-   flex-grow: 1;
-   padding-right: 60rpx;
-   text-align: center;
-   opacity: 0.8;
-   font-size: 40rpx;
-   line-height: 56rpx;
- }
- 
-  .weather-icon{
-   width: 90rpx;
-   height: 90rpx;
- } 
+  display: flex;
+  align-items: center;
+  height: 150rpx;
+  margin: 0 40rpx;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.day{
+  opacity: 0.8;
+  font-size: 40rpx;
+  line-height: 56rpx;
+}
+
+.date{
+  opacity: 0.5;
+  font-size: 25rpx;
+  line-height: 35rpx;
+}
+
+.temp{
+  flex-grow: 1;
+  padding-right: 60rpx;
+  text-align: center;
+  opacity: 0.8;
+  font-size: 40rpx;
+  line-height: 56rpx;
+}
+
+.weather-icon{
+  width: 90rpx;
+  height: 90rpx;
+} 
+
+.color{
+width: 750rpx;
+height:1600rpx;
+background: linear-gradient(to bottom right, Lightpink , Aquamarine );
+}

@@ -1,4 +1,9 @@
 <!--index.wxml-->
+<!--导航栏位置视图-->
+<view class='top-tatal' style='background-color:{{nowCityColor}}'>
+  <view class='peak' style='height:{{peakHeight}}rpx'></view>
+  <view class='top'></view>
+</view>
 <!--主视图-->
 <view class='weather-wrapper'>
   <!--位置视图style='background-color:{{nowCityColor}}'-->
@@ -16,6 +21,7 @@
    <!--气温差视图-->
   <view class="day-weather" bindtap='onTapDayWeather'>
     <view class="day-text">{{todayDate}}</view>
+    <view class='next-text'>→__→</view>
     <view class="temp-text">{{todayTemp}}</view>
   <image class="arrow-icon" src="/images/arrow.png"></image>
   </view>

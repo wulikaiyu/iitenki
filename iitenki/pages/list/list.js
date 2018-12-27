@@ -10,7 +10,8 @@ const WeekdayMap = {
 Page({
   data: {
     weekWeather:"",
-    city:"上海市"
+    city:"上海市",
+    peakHeight:0,
   },
   onPullDownRefresh(){
     this.getNow(()=>{
@@ -22,8 +23,21 @@ Page({
       city:options.city
     })
     this.getNow();
+    let screenRate = wx.getSystemInfoSync().windowHeight / wx.getSystemInfoSync().windowWidth
+    let peakHeight = 0
+    if (screenRate > 1.8)
+      peakHeight = screenRate*50
+    else
+      peakHeight = 0
+    this.setData({
+      peakHeight: peakHeight
+    })
   },
   getNow(callback){
+    /*wx.setNavigationBarColor({
+      frontColor: '#000000',
+      backgroundColor: "Lightpink"linear-gradient(to,bottom,right, Lightpink, Aquamarine)
+    })*/
     wx.request({
       url: 'https://test-miniprogram.com/api/weather/future',
       data: {
@@ -55,6 +69,11 @@ Page({
       complete: () => {
         callback && callback()//callback不是no的话执行callback
       }
+    })
+  },
+  onTapGetBack(){
+    wx.navigateTo({
+      url: "/pages/index/index"
     })
   }
 })

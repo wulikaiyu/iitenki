@@ -1,4 +1,7 @@
 /**index.wxss**/
+.top{
+  height: 100rpx;
+}
 .temp{
   text-align: center;
   font-size: 200rpx;
@@ -86,6 +89,11 @@
   padding-right: 30rpx;
   text-align: right;
 }
+.next-text {
+  flex-grow: 1;
+  text-align: right;
+  padding-right: 30rpx;
+}
 .arrow-icon {
   width: 13rpx;
   height: 24rpx;
@@ -117,14 +125,15 @@ height:42rpx;
 opacity: 0.5;
 }
 .bottomTips{
-  display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 10rpx;
-  margin-bottom: 10rpx;
+  position: absolute;
+  bottom: 20rpx;
+  left: 125rpx;
 }
 .bottomTips-text{
   font-size:20rpx;
   line-height: 42rpx;
   opacity: 0.6;
+
 }

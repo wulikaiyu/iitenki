@@ -37,6 +37,7 @@ Page({
     locationTipsText:"更新の都市をクリックしてください",
     locationAuthType:UNPROMPTED,
     locationTipsText:UNPROMPTED_TIPS,
+    peakHeight:0,
     },
   onPullDownRefresh(){
     this.getNow(()=>{
@@ -47,7 +48,17 @@ Page({
     this.qqmapsdk = new QQMapWX({
       key:'FY3BZ-BZX3O-IRRWS-SU4DG-ZKQPT-BQBCJ'
     }),
-      this.getNowSetting()
+    this.getNowSetting()
+    let screenRate = wx.getSystemInfoSync().windowHeight/wx.getSystemInfoSync().windowWidth
+    let peakHeight = 0
+    if (screenRate>1.8)
+      peakHeight = 100
+    else
+      peakHeight = 0
+    this.setData({
+      peakHeight:peakHeight
+    })
+    console.log(screenRate)
   },
   onShow(){
     wx.getSetting({
@@ -161,18 +172,27 @@ Page({
         let latitude = res.latitude
         let longitude = res.longitude
         this.qqmapsdk.reverseGeocoder({
-          location: { latitude, longitude },
+          location: { 
+            latitude,
+            longitude
+             },
           success: res=>{
-            let city = res.result.address_component.city
-            let locationTipsText = ""
             //console.log(res)
+            let nation_code = res.result.ad_info.nation_code
+            let city = ""
+            if (nation_code === "392" || nation_code === "410")
+              city = res.result.address_component.locality
+            if (nation_code === "156")
+              city = res.result.address_component.city
+            let locationTipsText = ""       
             if(city=="")
               {city="なに"
               locationTipsText = "どこにあるのか(ﾉﾟοﾟ)"}
             this.setData({
               city: city,
               locationTipsText: locationTipsText
-            })     
+            }) 
+            //console.log(city)    
             this.getNow()  
           } ,         
           fail:res =>{
