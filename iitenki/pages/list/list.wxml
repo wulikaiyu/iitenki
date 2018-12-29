@@ -1,15 +1,59 @@
 <!--pages/list/list.wxml-->
-<view class='color'  bindtap='onTapGetBack'>
+<!--顶部视图-->
+<view class='color' style='background:{{colorful}}'>
+  <!--尖部视图-->
   <view class='peak' style='height:{{peakHeight}}rpx'></view>
-  <view class='top'>
-   <view class='topTips-text'>←__←</view>
-  </view>
-  <view class='date-item' wx:for="{{weekWeather}}" wx:key = "2">
-    <view class="date-wrapper">
-      <view class="day">{{item.day}}</view>
-      <view class="date">{{item.date}}</view>
+  <view class='top' >
+  <view class='topTips-text' bindtap='onTapGetBack'>←__←</view>
+    <!--圆视图-->   
+    <view class='topTips-circle'bindtap="chanMask">
+      <view style="width:45rpx">
+      <view class='topTips-circle1' ></view>
+      </view>
+      <view style="width:45rpx">
+      <view class='topTips-circle2' ></view>
+      </view>
+      <view style="width:40rpx">
+      <view class='topTips-circle3' ></view>
+      </view>
+      <view style="width:45rpx">
+      <view class='topTips-circle4' ></view>
+      </view>
     </view>
-    <view class="temp">{{item.temp}}</view>
-    <image class="weather-icon" src="{{item.weatherIcon}}"></image>
   </view>
- </view>
+<!--主视图-->
+<view class="date-item-total" style='flex-direction:row'>
+  <view style='flex-direction:columns'>
+    <view class='date-item1' wx:for="{{weekWeather1}}" wx:key="date-item1">
+        <view class="day">{{item.day}}</view>
+    </view>
+  </view>
+  <view style='flex-direction:columns'>
+    <view class='date-item2' wx:for="{{weekWeather2}}"wx:key="date-item">
+      <view class="temp">{{item.temp}}</view>
+      <image class="weather-icon" src="{{item.weatherIcon}}"></image>
+    </view>
+  </view>
+</view>
+<!--弹框视图-->
+  <view class="mask {{show ? 'show' : 'hide'}}" bindtap="chanMask">
+    <view class="mask-shadow {{runAM ? 'mask-shadow-on' : ''}}"></view>
+    <view class="mask-con {{runAM ? 'mask-con-show' : ''}}">
+    <!--语言选择视图-->
+      <view class="lan-Chinese" bindtap="onTapChinese">
+        <view class="lan-text">简体中文</view>
+      </view>
+      <view class="lan-English" bindtap="onTapEnglish">
+        <view class="lan-text">English</view>
+      </view>
+      <view class="lan-Japanese" bindtap="onTapJapanese">
+        <view class="lan-text">日本語</view>
+      </view>
+      <view class="lan-Korean" bindtap="onTapKorean">
+        <view class="lan-text">한국어</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+

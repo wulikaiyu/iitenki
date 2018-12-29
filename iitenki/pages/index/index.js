@@ -25,6 +25,7 @@ const UNPROMPTED_TIPS = "クリックして現在地を確認"
 const UNAUTHORIZED_TIPS = "クリックして場所の許可を開く"
 const AUTHORIZED_TIPS = ""
 
+const common = require("../../common.js")
 Page({
   data:{
     nowTemp:"",
@@ -49,16 +50,10 @@ Page({
       key:'FY3BZ-BZX3O-IRRWS-SU4DG-ZKQPT-BQBCJ'
     }),
     this.getNowSetting()
-    let screenRate = wx.getSystemInfoSync().windowHeight/wx.getSystemInfoSync().windowWidth
-    let peakHeight = 0
-    if (screenRate>1.8)
-      peakHeight = 100
-    else
-      peakHeight = 0
+    let peakHeight = common.getPeakHeight()
     this.setData({
       peakHeight:peakHeight
     })
-    console.log(screenRate)
   },
   onShow(){
     wx.getSetting({
@@ -86,7 +81,6 @@ Page({
       success:res=>{    
         let result = res.data.result
         this.setNow(result)
-        //console.log(nowHour)
         this.setHourlyWeather(result)
         this.setDay(result)
       },
@@ -236,4 +230,7 @@ Page({
     })
   }
 })
+
+
+
 

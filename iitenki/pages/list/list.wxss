@@ -1,4 +1,5 @@
 /* pages/list/list.wxss */
+/* 顶部样式 */
 .top{
   margin: 0 40rpx;
   height: 185rpx;
@@ -10,27 +11,69 @@
   opacity: 0.8;
   font-size: 40rpx;
   line-height: 56rpx;
+  padding-right: 125rpx;
 }
-.date-item {
+/* 圆样式 */
+.topTips-circle{
+  display: flex;
+  flex-direction: row;
+  padding: 20rpx;
+}
+.topTips-circle1{
+	border-radius: 50%;
+	width: 32rpx;
+	height: 32rpx; 
+  background: linear-gradient(to bottom right, red ,yellow)
+}
+.topTips-circle2{
+	border-radius: 50%;
+	width: 32rpx;
+	height: 32rpx; 
+  background: linear-gradient(to bottom right, white,blue,red);
+}
+.topTips-circle3{
+	border-radius: 50%;
+	width: 32rpx;
+	height: 32rpx; 
+  background: linear-gradient(to bottom right, white ,white,red )
+}
+.topTips-circle4{
+	border-radius: 50%;
+	width: 32rpx;
+	height: 32rpx; 
+  background: linear-gradient(to bottom right, blue,red)
+}
+/* 表格样式 */
+.date-item-total{
+  display: flex;
+  flex-direction: row;
+}
+.date-item1{
+  width:260rpx;
+  height:150rpx;
   display: flex;
   align-items: center;
-  height: 150rpx;
-  margin: 0 40rpx;
+  margin-left: 40rpx;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
-
+.date-item2{
+  width:410rpx;
+  height:150rpx;
+  display: flex;
+  align-items: center;
+  margin-right: 40rpx;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
 .day{
   opacity: 0.8;
   font-size: 40rpx;
   line-height: 56rpx;
 }
-
 .date{
   opacity: 0.5;
   font-size: 25rpx;
   line-height: 35rpx;
 }
-
 .temp{
   flex-grow: 1;
   padding-right: 60rpx;
@@ -39,14 +82,89 @@
   font-size: 40rpx;
   line-height: 56rpx;
 }
-
 .weather-icon{
   width: 90rpx;
   height: 90rpx;
 } 
-
+/* 整体样式 */
 .color{
 width: 750rpx;
 height:1600rpx;
 background: linear-gradient(to bottom right, Lightpink , Aquamarine );
+}
+
+/* mask样式 */
+.hide{
+  display: none;
+}
+.show{
+  display: block;
+}
+.mask{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+.mask-shadow{
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0;
+  transition: 1s;
+}
+.mask-shadow-on{
+  opacity: 0.3;
+}
+.mask-con{
+  position: absolute;
+  width: 100%;
+  height: 400rpx;
+  left: 0;
+  bottom: -300rpx;
+  transition: 1s;
+  text-align: center;
+  line-height: 300rpx;
+  box-shadow: 0 1px 10px #aaa;
+  background: linear-gradient(to bottom right,  Aquamarine,Lightpink  );
+}
+.mask-con-show{
+  bottom: 0;
+}
+
+.lan-Chinese{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  height:100rpx;
+}
+.lan-English{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  height:100rpx;
+}
+.lan-Japanese{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  height:100rpx;
+}
+.lan-Korean{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  height:100rpx;
+}
+.lan-text{
+  opacity:0.8;
+  line-height:100rpx;
+}
+.test{
+  height: 50rpx;
 }

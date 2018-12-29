@@ -45,3 +45,8 @@
 <view class='bottomTips'>
   <view class='bottomTips-text'>開くにはGPSとWeChatの位置情報を確認してください</view>
 </view>
+
+ <!--底部视图-->
+<view class='bottomTips'>
+  <view class='bottomTips-text'>開くにはGPSとWeChatの位置情報を確認してください</view>
+</view>
